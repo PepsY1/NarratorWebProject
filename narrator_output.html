@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Silverback Solutions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+     <!-- Other head content -->
+</head>
+<body>
+    <div class="titleHeading">
+        <h1>Silverback Solutions</h1>
+        
+    </div>
+    <div class="tabs">
+        <a href="{{ url_for('run_narrator') }}">Narrator</a>
+        <a href="{{ url_for('tab2') }}">Create Custom</a>
+        <a href="{{ url_for('tab3') }}">About us</a>
+    </div>
+    <div class="content">
+        <div class="company">
+            <form action="/change-voice" method="post">
+                <div class="voice-selector">
+                    <label for="voiceSelect">Choose a Voice:</label>
+                    <select id="voiceSelect" name="voice">
+                        <option value="Attenborough">David Attenborough</option>
+                        <option value="The Rock">Dwayne 'The Rock' Johnson</option>
+                        <option value="Rogan">Joe Rogan</option>
+                        <!-- Add more voice options as needed -->
+                    </select>
+                    <p>We are trying to add as many voices as possible for you to be
+                        able to use. We hope our selection satisfies your needs. Don't
+                        hesistate to sign up to our email list which will update you
+                        whenever we add more of your favourite stars and celebrities.
+                    </p>
+                    <h2>Coming Soon!</h2>
+                    <p>
+                        We are working hard to be able to give you the ability to 
+                        generate your own AI Voice, so the computer can talk like you!
+                        We just want to make everything spick and span before putting 
+                        it out.
+                    </p>
+                    <p>Silverback Solutions Team</p>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <h1>ImageToVoice</h1>
+            <form action="/upload-image" method="post" enctype="multipart/form-data" class="upload-form">
+                <div class="file-upload">
+                    <label for="file-upload" class="file-upload-label">Choose File</label>
+                    <input id="file-upload" type="file" name="image" accept="image/*">
+                </div>
+                <input type="submit" value="Upload and Analyze">
+            </form>
+            {% if analysis %}
+                <div class="analysis-text">{{ analysis }}</div>
+                <!-- <audio controls>
+                    <source src="{{ url_for('download_file', filename=audio_path) }}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio> -->
+                <audio controls>
+                    <source src="/audio/audio.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                
+
+                
+            {% endif %}
+        </div>
+        <div class="company">
+            <img src="/static/SilverbackSolutionsLogo-removebg.png">
+        </div>
+    </div>
+    
+    
+</body>
+</html>

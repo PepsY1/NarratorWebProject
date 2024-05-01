@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silverback Solutions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleAboutUs.css') }}">
+</head>
+<body>
+    <div class="titleHeading">
+        <h1>Silverback Solutions</h1>
+    </div>
+    <div class="tabs">
+        <a href="{{ url_for('run_narrator') }}">Narrator</a>
+        <a href="{{ url_for('tab2') }}">Create Custom</a>
+        <a href="{{ url_for('tab3') }}">About us</a>
+    </div>
+
+    <div class="container">
+        <h1>About us</h1>
+        <p>We are small independent team of students making the most of our opportunities in this 
+        world and trying to get ahead. We price fairly, and want to make sure that our service is 
+        available to as many people as possible. We aren't going to ask you to support us and give
+        us money for nothing. We just ask you enjoy using our service and hope it brings a smile to 
+        your face.</p>
+        <img src="/static/SilverbackSolutionsLogo-removebg.png">
+    </div>
+</body>
+</html>
