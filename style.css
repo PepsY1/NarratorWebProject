@@ -1,0 +1,278 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background for the whole page */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.titleHeading{
+    margin-top: -100px;
+}
+.content{
+    width: 1500px;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+.container {
+    text-align: center;
+    background-color: #1e1e1e; /* Slightly lighter background for the container */
+    box-shadow: 0 0 10px 2px #39ff14;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    height: 80%;
+    max-width: 600px;
+    flex-basis: calc(80% - 200px); /* Adjusted width calculation */
+    margin: 120px 120px; /* Horizontal margin */
+}
+.company{
+    text-align: center;
+    width: 500px;
+    background-color: #1e1e1e; /* Slightly lighter background for the container */
+    box-shadow: 0 0 10px 2px #39ff14;
+    margin-top: 120px;
+    border-radius: 20px;
+    height: 80%;
+    padding: 40px;
+    max-width: 600px;
+}
+
+
+@media (max-width: 1600px) {
+    .content{
+        width: 1400px; /* Horizontal margin */
+    }
+}
+@media (max-width: 1500px) {
+    .content{
+        width: 1300px; /* Horizontal margin */
+    }
+}
+@media (max-width: 1400px) {
+    .content{
+        width: 1200px; /* Horizontal margin */
+    }
+}
+@media (max-width: 1300px) {
+    .content {
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Align children in the center */
+        margin-top: 100px;
+    }
+
+    .container,
+    .company {
+        flex-basis: 100%; /* Children take full width */
+        margin: 10px 0; /* Adjusted margin for vertical stacking */
+        width: 600px;
+    }
+    .content > .company:first-child {
+        /* styles for the second .company div */
+        text-align: left;
+        order:2;
+    }
+    .content > .company:last-child {
+        /* styles for the second .company div */
+        display: none;
+    }
+}
+@media (max-width: 750px) {
+    .content {
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Align children in the center */
+        margin-top: 100px;
+    }
+
+    .container,
+    .company {
+        width: 500px;
+        flex-basis: 100%; /* Children take full width */
+        margin: 10px 0; /* Adjusted margin for vertical stacking */
+    }
+    .content > .company:first-child {
+        /* styles for the second .company div */
+        text-align: left;
+        order:2;
+    }
+    .content > .company:last-child {
+        /* styles for the second .company div */
+        display: none;
+    }
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.tabs {
+    display: flex;
+    justify-content: center; /* Center tabs */
+    width: 100%; /* Full width to center content */
+    margin-bottom: -75px;
+    z-index: 10;
+}
+
+.tabs a {
+    padding: 10px 20px;
+    margin: 0 5px; /* Space between tabs */
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tabs a:hover {
+    background-color: #444;
+}
+
+
+/* Custom style for the file upload input and label/button */
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch button to fill the container */
+  }
+  
+  .file-upload input[type='file'] {
+    display: none; /* Hide the default file input */
+  }
+  
+  /* Style for the custom upload button and submit button */
+  .file-upload-label,
+  input[type="submit"] {
+    height: 50px; /* Fixed height for both buttons */
+    line-height: 50px; /* Center text vertically */
+    border: none;
+    border-radius: 25px; /* Fully rounded corners for height of 50px */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    outline: none;
+    font-size: 16px; /* Set font size explicitly for both */
+    margin-top: 0;
+    width: 100%;
+  }
+  
+  /* Specifically target the first button to remove bottom margin */
+  
+  
+  .file-upload-label:hover,
+  input[type="submit"]:hover {
+    background-color: #367c39; /* Darker green on hover */
+  }
+  input[type="file"] {
+    border: 2px solid #555;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    outline: none;
+    width: calc(100% - 30px); /* full width minus padding */
+}
+
+input[type="submit"], button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    
+    border-radius: 25px; /* Fully rounded corners for height of 50px */
+    cursor: pointer;
+    font-weight: bold;
+    margin: 20px 0; /* More space around the buttons */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #367c39; /* Darker green on hover */
+}
+  /* Style for the submit button to match the file label */
+
+
+
+
+h1 {
+    color: #4CAF50;
+    font-size: 2.5em; /* Larger text for the heading */
+    margin-bottom: 20px;
+}
+
+
+
+audio {
+    width: 100%; /* Full width of its container */
+    margin-top: 20px;
+}
+
+p {
+    background-color: #292929; /* Dark background for the text */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.signoff, .nobox{
+    background-color: none;
+    
+}
+
+/* Additional styles for the upload area to match the wireframe */
+.upload-area {
+    background-color: #333; /* Darker background for the upload area */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Style for the analysis text area */
+.analysis-text {
+    background-color: #292929; /* Dark background for the analysis text */
+    color: #ddd; /* Lighter text color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.voice-selector {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+.voice-selector label {
+    margin-right: 10px;
+}
+
+.voice-selector select {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #555;
+    outline: none;
+    font-size: 16px;
+}
+
+.voice-selector select:hover, .voice-selector select:focus {
+    background-color: #4CAF50; /* Green */
+    border-color: #39ff14; /* Neon green */
+}
+
+/* Style for options */
+.voice-selector option {
+    background-color: #1e1e1e; /* Darker grey for options */
+    color: white; /* Text color for options */
+}
+.signoff{
+    font-style: italic;
+}
